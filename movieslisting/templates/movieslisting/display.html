@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movies Display</title>
+</head>
+<body>
+	<h1>Movie details are:</h1>
+	{% if display %}
+	<table border="3";border-style="dotted">
+		<button><a href="http://127.0.0.1:8008/create">Add Movie</a></button>
+		
+		<tr>
+			<th>poster</th>
+			<th>movie_name</th>
+			<th>release_year</th>
+			<th>plot</th>
+			<th>cast</th>
+		</tr>
+
+		{% for movie in display %}
+			<tr>
+				<td><img src="{{ movie.poster.url }}" height="20%"></td>
+				<td>{{ movie.movie_name }}</td>
+				<td>{{ movie.release_year }}</td>
+				<td>{{ movie.plot }}</td>
+				<td>{{ movie.cast }}
+				
+			</td>
+
+			</tr>
+			
+		{% endfor %}
+		
+
+	</table>
+
+
+	{% else %}
+	<h2>No movies found</h2>
+		
+	{% endif %}
+
+
+</body>
+</html>

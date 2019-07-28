@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create</title>
+</head>
+<body>
+
+	<form method="POST" enctype="multipart/form-data">
+		
+		{{ create.as_p }}
+		{% csrf_token %}
+		
+		<button><a href="http://127.0.0.1:8008/">Add Actor</a></button>
+
+		<input type="submit">
+
+
+
+	</form>
+
+</body>
+</html>
